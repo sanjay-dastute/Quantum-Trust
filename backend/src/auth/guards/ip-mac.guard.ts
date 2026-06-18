@@ -16,7 +16,7 @@ export class IpMacGuard implements CanActivate {
       const mac = '00:00:00:00:00:00'; // Real extraction would be handled here
       
       const isApproved = user.approved_addresses.some(
-        (addr) => addr.ip === ip || addr.mac === mac
+        (addr: { ip?: string; mac?: string }) => addr.ip === ip || addr.mac === mac
       );
 
       if (!isApproved) {

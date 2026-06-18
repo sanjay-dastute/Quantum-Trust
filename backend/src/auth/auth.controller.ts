@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 import { RegisterDto } from './dto/register.dto';
 import { LoginDto } from './dto/login.dto';
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import * as requestIp from 'request-ip';
 
 @Controller('api')
@@ -36,7 +36,7 @@ export class AuthController {
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       });
       // Remove refreshToken from JSON response payload for security
-      delete result.refreshToken;
+      delete (result as { refreshToken?: string }).refreshToken;
     }
 
     return result;

@@ -104,7 +104,7 @@ export class AuthService {
 
       // Reset failed login attempts on successful login
       if (user.failed_login_attempts > 0) {
-        await this.usersService.updateUser(user.user_id, { failed_login_attempts: 0, locked_until: null });
+        await this.usersService.updateUser(user.user_id, { failed_login_attempts: 0, locked_until: undefined });
       }
 
       const payload = {
@@ -159,7 +159,7 @@ export class AuthService {
     // For this module, we will save it directly and they must enable it.
     // Update user.mfa_secret in DB (needs update method in UsersService)
     
-    const qrCodeUrl = await qrcode.toDataURL(secret.otpauth_url);
+    const qrCodeUrl = await qrcode.toDataURL(secret.otpauth_url!);
     return {
       secret: secret.base32,
       qrCode: qrCodeUrl,

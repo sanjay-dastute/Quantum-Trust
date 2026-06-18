@@ -104,7 +104,7 @@ export class UsersController {
     }
     
     // Restrict update to name/phone only as per spec AC-1.07
-    const allowedUpdates = {};
+    const allowedUpdates: Record<string, any> = {};
     if (data.details?.name) allowedUpdates['details'] = { ...req.user.details, name: data.details.name };
     if (data.details?.phone) allowedUpdates['details'] = { ...allowedUpdates['details'], phone: data.details.phone };
 

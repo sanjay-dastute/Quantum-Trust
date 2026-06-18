@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, forwardRef } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { LedgerService } from './ledger/ledger.service';
 import { StorageService } from './storage/storage.service';
@@ -14,7 +14,7 @@ import { BatchJob } from '../entities/batch-job.entity';
     TypeOrmModule.forFeature([BatchJob]),
     MongooseModule.forFeature([{ name: AuditLog.name, schema: AuditLogSchema }]),
     CryptoModule,
-    HsmModule,
+    forwardRef(() => HsmModule),
   ],
   providers: [LedgerService, StorageService, KafkaService],
   exports: [LedgerService, StorageService, HsmModule, KafkaService]

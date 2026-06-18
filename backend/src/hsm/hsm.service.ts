@@ -1,4 +1,4 @@
-import { Injectable, Logger, ConflictException } from '@nestjs/common';
+import { Injectable, Logger, ConflictException, Inject, forwardRef } from '@nestjs/common';
 import * as crypto from 'crypto';
 import { LedgerService } from '../integrations/ledger/ledger.service';
 
@@ -6,7 +6,10 @@ import { LedgerService } from '../integrations/ledger/ledger.service';
 export class HsmService {
   private readonly logger = new Logger(HsmService.name);
 
-  constructor(private readonly ledgerService: LedgerService) {}
+  constructor(
+    @Inject(forwardRef(() => LedgerService))
+    private readonly ledgerService: LedgerService
+  ) {}
 
   /**
    * Health checks the HSM connection.

@@ -90,7 +90,7 @@ export class AuthService {
         }
 
         const isTotpValid = speakeasy.totp.verify({
-          secret: user.mfa_secret,
+          secret: user.mfa_secret as string,
           encoding: 'base32',
           token: loginDto.totp,
           window: 1,
@@ -104,7 +104,7 @@ export class AuthService {
 
       // Reset failed login attempts on successful login
       if (user.failed_login_attempts > 0) {
-        await this.usersService.updateUser(user.user_id, { failed_login_attempts: 0, locked_until: null });
+        await this.usersService.updateUser(user.user_id, { failed_login_attempts: 0, locked_until: undefined });
       }
 
       const payload = {
@@ -159,7 +159,7 @@ export class AuthService {
     // For this module, we will save it directly and they must enable it.
     // Update user.mfa_secret in DB (needs update method in UsersService)
     
-    const qrCodeUrl = await qrcode.toDataURL(secret.otpauth_url);
+    const qrCodeUrl = await qrcode.toDataURL(secret.otpauth_url!);
     return {
       secret: secret.base32,
       qrCode: qrCodeUrl,

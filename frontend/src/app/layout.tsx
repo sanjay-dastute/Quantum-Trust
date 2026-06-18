@@ -4,7 +4,6 @@ import DashboardLayout from '@/components/layout/DashboardLayout';
 import { AppContextProvider } from '@/context/AppContext';
 import ReactQueryProvider from '@/providers/ReactQueryProvider';
 import { ToastContainer } from 'react-toastify';
-import '@/i18n';
 import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
 

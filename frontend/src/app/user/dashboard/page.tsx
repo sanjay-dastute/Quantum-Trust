@@ -19,7 +19,12 @@ export default function UserDashboard() {
       });
       if (res.ok) setStats(await res.json());
     } catch (e) {
-      toast.error('Network error loading personal stats');
+      toast.error('Backend Offline: Showing Simulated Data');
+      setStats({
+        filesEncrypted: 42,
+        activeKeys: 5,
+        lastEncryptionTime: new Date().toISOString()
+      });
     }
   };
 

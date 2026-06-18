@@ -23,7 +23,19 @@ export default function OrgDashboard() {
       });
       if (res.ok) setStats(await res.json());
     } catch (e) {
-      toast.error('Network error loading org stats');
+      toast.error('Backend Offline: Showing Simulated Data');
+      setStats({
+        totalMembers: 45,
+        encryptedFiles: 1240,
+        activeKeys: 85,
+        breachAlerts: 0,
+        storageDistribution: [
+          { name: 'AWS S3', value: 450 }, { name: 'Azure Blob', value: 320 }, { name: 'On-Premises', value: 150 }
+        ],
+        fieldDistribution: [
+          { name: 'PII', value: 500 }, { name: 'Financial', value: 200 }, { name: 'Healthcare', value: 120 }
+        ]
+      });
     }
   };
 

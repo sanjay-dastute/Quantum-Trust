@@ -1,0 +1,17 @@
+{
+  "sidebar": {
+    "dashboard": "Mon Tableau de Bord",
+    "keys": "Mes Clés",
+    "files": "Gestionnaire de Fichiers",
+    "settings": "Paramètres",
+    "support": "Support"
+  },
+  "settings": {
+    "title": "Paramètres de l'Application",
+    "theme": "Préférence de Thème",
+    "dark_mode": "Mode Sombre",
+    "language": "Langue",
+    "security": "Sécurité",
+    "mfa": "Authentification à deux Facteurs (MFA)"
+  }
+}

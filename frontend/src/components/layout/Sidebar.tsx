@@ -11,61 +11,55 @@ import CircleIcon from '@mui/icons-material/Circle';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { useAppContext } from '@/context/AppContext';
+import { useTranslation } from 'react-i18next';
 
 const DRAWER_WIDTH = 280;
 
-const getNavigation = (role?: string) => {
+const getNavigation = (role: string | undefined, t: any) => {
   if (role === 'admin') {
     return [
-      { text: 'Admin Overview', icon: <DashboardIcon />, path: '/admin/dashboard' },
-      { text: 'Organisations', icon: <VerifiedUserIcon />, path: '/admin/organisations' },
-      { text: 'User Management', icon: <VerifiedUserIcon />, path: '/admin/users' },
-      { text: 'Encryption Keys', icon: <LockIcon />, path: '/admin/keys' },
-      { text: 'File Manager', icon: <DashboardIcon />, path: '/admin/file-manager' },
-      { text: 'Backup & Recovery', icon: <HistoryIcon />, path: '/admin/backup' },
-      { text: 'Compliance', icon: <SecurityIcon />, path: '/admin/compliance' },
-      { text: 'Global Audit Logs', icon: <HistoryIcon />, path: '/admin/logs' },
-      { text: 'System Health', icon: <SecurityIcon />, path: '/admin/health' },
-      { text: 'API Integrations', icon: <PaymentsIcon />, path: '/admin/api-test' },
+      { text: t('sidebar.overview', 'Admin Overview'), icon: <DashboardIcon />, path: '/admin/dashboard' },
+      { text: t('sidebar.organisations', 'Organisations'), icon: <VerifiedUserIcon />, path: '/admin/organisations' },
+      { text: t('sidebar.users', 'User Management'), icon: <VerifiedUserIcon />, path: '/admin/users' },
+      { text: t('sidebar.keys', 'Encryption Keys'), icon: <LockIcon />, path: '/admin/keys' },
+      { text: t('sidebar.files', 'File Manager'), icon: <DashboardIcon />, path: '/admin/file-manager' },
+      { text: t('sidebar.backup', 'Backup & Recovery'), icon: <HistoryIcon />, path: '/admin/backup' },
+      { text: t('sidebar.compliance', 'Compliance'), icon: <SecurityIcon />, path: '/admin/compliance' },
+      { text: t('sidebar.logs', 'Global Audit Logs'), icon: <HistoryIcon />, path: '/admin/logs' },
+      { text: t('sidebar.health', 'System Health'), icon: <SecurityIcon />, path: '/admin/health' },
+      { text: t('sidebar.api', 'API Integrations'), icon: <PaymentsIcon />, path: '/admin/api-test' },
     ];
   } else if (role === 'org_admin') {
     return [
-      { text: 'Org Overview', icon: <DashboardIcon />, path: '/org-admin/dashboard' },
-      { text: 'Team Users', icon: <VerifiedUserIcon />, path: '/org-admin/users' },
-      { text: 'HSM Clusters', icon: <LockIcon />, path: '/org-admin/keys' },
-      { text: 'File Manager', icon: <DashboardIcon />, path: '/org-admin/file-manager' },
-      { text: 'API Integrations', icon: <PaymentsIcon />, path: '/org-admin/api-integration' },
-      { text: 'Settings', icon: <SecurityIcon />, path: '/org-admin/settings' },
-      { text: 'Audit Logs', icon: <HistoryIcon />, path: '/org-admin/logs' },
-      { text: 'Support', icon: <HistoryIcon />, path: '/org-admin/support' },
+      { text: t('sidebar.overview', 'Org Overview'), icon: <DashboardIcon />, path: '/org-admin/dashboard' },
+      { text: t('sidebar.users', 'Team Users'), icon: <VerifiedUserIcon />, path: '/org-admin/users' },
+      { text: t('sidebar.keys', 'HSM Clusters'), icon: <LockIcon />, path: '/org-admin/keys' },
+      { text: t('sidebar.files', 'File Manager'), icon: <DashboardIcon />, path: '/org-admin/file-manager' },
+      { text: t('sidebar.api', 'API Integrations'), icon: <PaymentsIcon />, path: '/org-admin/api-integration' },
+      { text: t('sidebar.settings', 'Settings'), icon: <SecurityIcon />, path: '/org-admin/settings' },
+      { text: t('sidebar.logs', 'Audit Logs'), icon: <HistoryIcon />, path: '/org-admin/logs' },
+      { text: t('sidebar.support', 'Support'), icon: <HistoryIcon />, path: '/org-admin/support' },
     ];
   } else {
     // Standard User
     return [
-      { text: 'My Dashboard', icon: <DashboardIcon />, path: '/user/dashboard' },
-      { text: 'My Keys', icon: <LockIcon />, path: '/user/keys' },
-      { text: 'File Manager', icon: <DashboardIcon />, path: '/user/file-manager' },
-      { text: 'API Credentials', icon: <PaymentsIcon />, path: '/user/api-integration' },
-      { text: 'Activity Logs', icon: <HistoryIcon />, path: '/user/logs' },
-      { text: 'Settings', icon: <SecurityIcon />, path: '/user/settings' },
-      { text: 'Support', icon: <HistoryIcon />, path: '/user/support' },
+      { text: t('sidebar.dashboard', 'My Dashboard'), icon: <DashboardIcon />, path: '/user/dashboard' },
+      { text: t('sidebar.keys', 'My Keys'), icon: <LockIcon />, path: '/user/keys' },
+      { text: t('sidebar.files', 'File Manager'), icon: <DashboardIcon />, path: '/user/file-manager' },
+      { text: t('sidebar.api', 'API Credentials'), icon: <PaymentsIcon />, path: '/user/api-integration' },
+      { text: t('sidebar.logs', 'Activity Logs'), icon: <HistoryIcon />, path: '/user/logs' },
+      { text: t('sidebar.settings', 'Settings'), icon: <SecurityIcon />, path: '/user/settings' },
+      { text: t('sidebar.support', 'Support'), icon: <HistoryIcon />, path: '/user/support' },
     ];
   }
 };
 
-const NAVIGATION = [
-  { text: 'Overview', icon: <DashboardIcon />, path: '/' },
-  { text: 'HSM Clusters', icon: <LockIcon />, path: '/hsm-clusters' },
-  { text: 'Revenue', icon: <PaymentsIcon />, path: '/revenue' },
-  { text: 'Compliance', icon: <VerifiedUserIcon />, path: '/compliance' },
-  { text: 'Audit Logs', icon: <HistoryIcon />, path: '/audit-logs' },
-];
-
 export default function Sidebar() {
   const pathname = usePathname();
   const { user } = useAppContext();
+  const { t } = useTranslation();
   
-  const NAVIGATION = getNavigation(user?.role);
+  const NAVIGATION = getNavigation(user?.role, t);
 
   return (
     <Drawer

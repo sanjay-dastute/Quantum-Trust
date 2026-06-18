@@ -1,0 +1,17 @@
+{
+  "sidebar": {
+    "dashboard": "Mi Panel",
+    "keys": "Mis Claves",
+    "files": "Gestor de Archivos",
+    "settings": "Ajustes",
+    "support": "Soporte"
+  },
+  "settings": {
+    "title": "Ajustes de la Aplicación",
+    "theme": "Preferencia de Tema",
+    "dark_mode": "Modo Oscuro",
+    "language": "Idioma",
+    "security": "Seguridad",
+    "mfa": "Autenticación de dos Factores (MFA)"
+  }
+}

@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
+import i18n from '@/i18n';
 
 interface AppContextType {
   user: any;
@@ -11,6 +12,7 @@ interface AppContextType {
   logout: () => void;
   toggleTheme: () => void;
   setLanguage: (lang: string) => void;
+  setUser: (user: any) => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -58,11 +60,12 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
 
   const setLanguage = (lang: string) => {
     setLanguageState(lang);
+    i18n.changeLanguage(lang);
     localStorage.setItem('language', lang);
   };
 
   return (
-    <AppContext.Provider value={{ user, themeMode, language, login, logout, toggleTheme, setLanguage }}>
+    <AppContext.Provider value={{ user, themeMode, language, login, logout, toggleTheme, setLanguage, setUser }}>
       {children}
     </AppContext.Provider>
   );

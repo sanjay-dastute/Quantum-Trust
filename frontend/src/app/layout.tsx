@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import ThemeRegistry from '@/components/ThemeRegistry';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { AppContextProvider } from '@/context/AppContext';
+import ReactQueryProvider from '@/providers/ReactQueryProvider';
 import { ToastContainer } from 'react-toastify';
+import '@/i18n';
 import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
 
@@ -19,14 +21,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body style={{ margin: 0, padding: 0 }}>
-        <AppContextProvider>
-          <ThemeRegistry>
-            <DashboardLayout>
-              {children}
-            </DashboardLayout>
-            <ToastContainer position="top-right" autoClose={5000} theme="colored" />
-          </ThemeRegistry>
-        </AppContextProvider>
+        <ReactQueryProvider>
+          <AppContextProvider>
+            <ThemeRegistry>
+              <DashboardLayout>
+                {children}
+              </DashboardLayout>
+              <ToastContainer position="top-right" autoClose={5000} theme="colored" />
+            </ThemeRegistry>
+          </AppContextProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

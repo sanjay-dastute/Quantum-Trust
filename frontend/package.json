@@ -16,9 +16,13 @@
     "@mui/material": "^9.1.1",
     "@mui/material-nextjs": "^9.1.1",
     "@mui/x-data-grid": "^9.5.0",
+    "@tanstack/react-query": "^5.101.0",
+    "@tanstack/react-query-devtools": "^5.101.0",
     "@types/papaparse": "^5.5.2",
     "@types/sanitize-html": "^2.16.1",
     "chart.js": "^4.5.1",
+    "i18next": "^26.3.1",
+    "i18next-browser-languagedetector": "^8.2.1",
     "jwt-decode": "^4.0.0",
     "next": "14.2.35",
     "papaparse": "^5.5.3",
@@ -27,9 +31,11 @@
     "react-dom": "^18",
     "react-dropzone": "^15.0.0",
     "react-hook-form": "^7.79.0",
+    "react-i18next": "^17.0.8",
     "react-toastify": "^11.1.0",
     "react-tooltip": "^6.0.8",
-    "sanitize-html": "^2.17.5"
+    "sanitize-html": "^2.17.5",
+    "socket.io-client": "^4.8.3"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.9.1",

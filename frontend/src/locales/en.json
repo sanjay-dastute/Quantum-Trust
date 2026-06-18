@@ -1,0 +1,17 @@
+{
+  "sidebar": {
+    "dashboard": "My Dashboard",
+    "keys": "My Keys",
+    "files": "File Manager",
+    "settings": "Settings",
+    "support": "Support"
+  },
+  "settings": {
+    "title": "Application Settings",
+    "theme": "Theme Preference",
+    "dark_mode": "Dark Mode",
+    "language": "Language",
+    "security": "Security",
+    "mfa": "Two-Factor Authentication (MFA)"
+  }
+}

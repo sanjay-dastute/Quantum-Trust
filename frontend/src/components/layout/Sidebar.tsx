@@ -18,21 +18,37 @@ const getNavigation = (role?: string) => {
   if (role === 'admin') {
     return [
       { text: 'Admin Overview', icon: <DashboardIcon />, path: '/admin/dashboard' },
+      { text: 'Organisations', icon: <VerifiedUserIcon />, path: '/admin/organisations' },
       { text: 'User Management', icon: <VerifiedUserIcon />, path: '/admin/users' },
+      { text: 'Encryption Keys', icon: <LockIcon />, path: '/admin/keys' },
+      { text: 'File Manager', icon: <DashboardIcon />, path: '/admin/file-manager' },
+      { text: 'Backup & Recovery', icon: <HistoryIcon />, path: '/admin/backup' },
+      { text: 'Compliance', icon: <SecurityIcon />, path: '/admin/compliance' },
       { text: 'Global Audit Logs', icon: <HistoryIcon />, path: '/admin/logs' },
+      { text: 'System Health', icon: <SecurityIcon />, path: '/admin/health' },
+      { text: 'API Integrations', icon: <PaymentsIcon />, path: '/admin/api-test' },
     ];
   } else if (role === 'org_admin') {
     return [
       { text: 'Org Overview', icon: <DashboardIcon />, path: '/org-admin/dashboard' },
       { text: 'Team Users', icon: <VerifiedUserIcon />, path: '/org-admin/users' },
-      { text: 'HSM Clusters', icon: <LockIcon />, path: '/org-admin/hsm-clusters' },
+      { text: 'HSM Clusters', icon: <LockIcon />, path: '/org-admin/keys' },
+      { text: 'File Manager', icon: <DashboardIcon />, path: '/org-admin/file-manager' },
+      { text: 'API Integrations', icon: <PaymentsIcon />, path: '/org-admin/api-integration' },
+      { text: 'Settings', icon: <SecurityIcon />, path: '/org-admin/settings' },
+      { text: 'Audit Logs', icon: <HistoryIcon />, path: '/org-admin/logs' },
+      { text: 'Support', icon: <HistoryIcon />, path: '/org-admin/support' },
     ];
   } else {
-    // org_user
+    // Standard User
     return [
-      { text: 'My Dashboard', icon: <DashboardIcon />, path: '/' },
-      { text: 'My Keys', icon: <LockIcon />, path: '/keys' },
-      { text: 'My Activity', icon: <HistoryIcon />, path: '/activity' },
+      { text: 'My Dashboard', icon: <DashboardIcon />, path: '/user/dashboard' },
+      { text: 'My Keys', icon: <LockIcon />, path: '/user/keys' },
+      { text: 'File Manager', icon: <DashboardIcon />, path: '/user/file-manager' },
+      { text: 'API Credentials', icon: <PaymentsIcon />, path: '/user/api-integration' },
+      { text: 'Activity Logs', icon: <HistoryIcon />, path: '/user/logs' },
+      { text: 'Settings', icon: <SecurityIcon />, path: '/user/settings' },
+      { text: 'Support', icon: <HistoryIcon />, path: '/user/support' },
     ];
   }
 };

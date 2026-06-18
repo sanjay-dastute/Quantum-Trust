@@ -8,7 +8,7 @@ import { UserRole } from '../entities/user.entity';
 @Controller('api')
 @UseGuards(JwtAuthGuard, RolesGuard)
 export class UsersController {
-  constructor(private readonly usersService: UsersService) {}
+  constructor(private readonly usersService: UsersService) { }
 
   // --- ADMIN PANEL ---
 
@@ -102,7 +102,7 @@ export class UsersController {
     if (req.user.user_id !== id) {
       throw new ForbiddenException('Can only update own profile');
     }
-    
+
     // Restrict update to name/phone only as per spec AC-1.07
     const allowedUpdates: any = {};
     if (data.details?.name) allowedUpdates['details'] = { ...req.user.details, name: data.details.name };

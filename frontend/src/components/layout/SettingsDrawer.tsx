@@ -56,7 +56,7 @@ export default function SettingsDrawer({ open, onClose }: { open: boolean; onClo
   };
 
   return (
-    <Drawer anchor="right" open={open} onClose={onClose} sx={{ '& .MuiDrawer-paper': { width: 320, p: 3, bgcolor: '#0f172a' } }}>
+    <Drawer anchor="right" open={open} onClose={onClose} sx={{ '& .MuiDrawer-paper': { width: 320, p: 3, bgcolor: 'background.paper' } }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
         <Typography variant="h6">Application Settings</Typography>
         <IconButton onClick={onClose} size="small"><CloseIcon /></IconButton>
@@ -88,7 +88,7 @@ export default function SettingsDrawer({ open, onClose }: { open: boolean; onClo
 
       <Box sx={{ mb: 4 }}>
         <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 'bold' }}>Security</Typography>
-        <Box sx={{ p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 2, bgcolor: 'background.default' }}>
+        <Box sx={{ p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 2, bgcolor: 'transparent' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1 }}>
             <Typography variant="body2" sx={{ fontWeight: 'bold' }}>Two-Factor Authentication (MFA)</Typography>
             <Switch checked={isMfaEnabled} onChange={handleMfaToggle} color="primary" />

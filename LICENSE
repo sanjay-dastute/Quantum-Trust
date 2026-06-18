@@ -1,0 +1,28 @@
+# END USER LICENSE AGREEMENT AND TERMS OF OWNERSHIP
+
+**Copyright (c) 2026 SANJAY KR (Product Head Engineering)**  
+**All Rights Reserved.**
+
+## 1. OWNERSHIP
+The "QuantumTrust Platform", including but not limited to its source code, architecture, design patterns, Post-Quantum Cryptographic models, Hyperledger Fabric smart contracts, Kafka stream processors, and all related documentation (collectively, the "Software"), is the exclusive, proprietary property of **SANJAY KR (Product Head Engineering)**. 
+
+All title, ownership rights, and intellectual property rights in and to the Software remain solely with the aforementioned Owner.
+
+## 2. GRANT OF LICENSE
+This Software is strictly **Proprietary and Confidential**.  
+No license is granted, either express or implied, to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, without the explicit, written, signed consent of the Owner.
+
+## 3. RESTRICTIONS
+You may not, under any circumstances:
+- Reverse engineer, decompile, disassemble, or derive the source code of the Software.
+- Distribute, lease, rent, or publicly display the Software or any of its components.
+- Remove, alter, or obscure any proprietary notices, labels, or marks from the Software.
+- Use the Software for any unauthorized commercial, enterprise, or competitive intelligence purposes.
+
+## 4. DISCLAIMER OF WARRANTY
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE OWNER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+**Author / Product Head Engineering:** SANJAY KR  
+**Platform:** QuantumTrust  
+**Year:** 2026

@@ -1,0 +1,30 @@
+apiVersion: 1
+groups:
+  - orgId: 1
+    name: "QuantumTrust Security Alerts"
+    folder: "Security"
+    interval: 10s
+    rules:
+      - uid: "breach_alert"
+        title: "Self-Destruct Breach Detected"
+        condition: "A"
+        data:
+          - refId: "A"
+            relativeTimeRange:
+              from: 60
+              to: 0
+            datasourceUid: "prometheus_ds"
+            model:
+              expr: "increase(quantum_breach_events_total[1m]) > 0"
+              intervalMs: 10000
+              maxDataPoints: 43200
+              refId: "A"
+        noDataState: "OK"
+        execErrState: "Alerting"
+        for: "0s"
+        annotations:
+          summary: "CRITICAL: Unauthorized decryption payload execution detected."
+          description: "An encrypted artifact was opened by an unauthorized IP/MAC. The self-destruct mechanism has fired."
+        labels:
+          severity: "critical"
+          team: "security-ops"

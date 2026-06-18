@@ -128,7 +128,7 @@ export default function ApiIntegrationPage() {
               slotProps={{ htmlInput: { readOnly: true } }} 
               sx={{ mb: 4 }}
               color={apiKey && !apiKey.includes('****') ? 'success' : 'primary'}
-              focused={apiKey && !apiKey.includes('****')}
+              focused={Boolean(apiKey && !apiKey.includes('****'))}
             />
             {apiKey && !apiKey.includes('****') && (
               <Button 

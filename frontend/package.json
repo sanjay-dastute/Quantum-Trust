@@ -1,0 +1,48 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.1.1",
+    "@mui/material": "^9.1.1",
+    "@mui/material-nextjs": "^9.1.1",
+    "@mui/x-data-grid": "^9.5.0",
+    "@types/papaparse": "^5.5.2",
+    "@types/sanitize-html": "^2.16.1",
+    "chart.js": "^4.5.1",
+    "jwt-decode": "^4.0.0",
+    "next": "14.2.35",
+    "papaparse": "^5.5.3",
+    "react": "^18",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^18",
+    "react-dropzone": "^15.0.0",
+    "react-hook-form": "^7.79.0",
+    "react-toastify": "^11.1.0",
+    "react-tooltip": "^6.0.8",
+    "sanitize-html": "^2.17.5"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "cypress": "^15.17.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.35",
+    "jest": "^30.4.2",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
